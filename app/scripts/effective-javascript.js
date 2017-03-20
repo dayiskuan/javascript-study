@@ -36,4 +36,7 @@ function area(r) { r = +r; return Math.PI * r * r }
 // 2. Se insertan cuando la siguiente línea de código no puede ser analizada, sirve como mecanismo de corrección de errores
 // a = b f();
 // Antes de estos caracteres es necesario el ; = (, [, +, -, y /. 
-// ; no se insertan en el head de los loops for
+// ; se insertan en el head de los loops for
+
+/* 2 VARIABLE SCOPE */
+// Las variables globales pueden dar errores name collisions y van en contra del principio de modularidad
