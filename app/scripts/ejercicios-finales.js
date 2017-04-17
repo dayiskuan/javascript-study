@@ -2,14 +2,14 @@
 console.log('EJERCICIO 1');
 var numbers = [];
 for(var i = 0; i < 3; i++){
-    numbers.push(Math.floor((Math.random() * 100) + 0));
+    numbers.push(Math.floor((Math.random() * 100)));
 }
 console.log(numbers);
 console.log('El numero mayor del array es: ' + Math.max.apply(this, numbers));
 
 //Generar un número aleatorio entre 0 y 100, e imprimir todos los números pares entre 0 y ese número
 console.log('EJERCICIO 2');
-var n = Math.floor((Math.random() * 100) + 0);
+var n = Math.floor((Math.random() * 100));
 console.log(n);
 var numbersEven = [];
 for(var i = 0; i < n; i++){
@@ -26,7 +26,7 @@ console.log('EJERCICIO 3');
 console.log(n);
 var numbersOdd = [];
 if(n > 30){
-    for(var i = 0; i < n; i++){
+    for(var i = 30; i < n; i++){
         if(i % 2 == 1){
             numbersOdd.push(i)
         }
@@ -50,7 +50,7 @@ if(n > 30){
     console.log('Los números que cumplen con la condición son: ');
     console.log(numbersThirty);
 } else if (n < 30){
-    for(i = 0; i < n; i++){
+    for(i = 30; i < n; i--){
         numbersThirty.push(i);
         numbersThirty.sort(function(a, b){ return b-a});
     }
@@ -64,11 +64,11 @@ if(n > 30){
 //luego generar n números aleatorios en ese mismo rango, e imprimir el más grande de ellos.
 console.log('EJERCICIO 5');
 function maxNum(){
-    n = Math.floor((Math.random() * 100) + 0);
+    n = Math.floor((Math.random() * 100));
     console.log(n);
     var numbersRandom = [];
     for(var i = 0; i < n; i++){
-        numbersRandom.push(Math.floor((Math.random() * 100) + 0));
+        numbersRandom.push(Math.floor((Math.random() * 100)));
     }
     console.log(numbersRandom);
     console.log('El número más grande es: ' + Math.max.apply(this, numbersRandom));
@@ -79,7 +79,7 @@ maxNum();
 //Por ejemplo, si el número generado es 2308, debe imprimir 13
 console.log('EJERCICIO 6');
 function sumDigits(long){
-    var num = Math.floor((Math.random() * 9999) + 1000);
+    var num = Math.floor((Math.random() * 8999) + 1000);
     console.log(num);
     var digits = [];
     digits = num.toString().split('').map(Number);
@@ -101,20 +101,23 @@ sumDigits(1);
 //Generar dos números aleatorios entre 2 y 100, y luego imprimir el Máximo Común Divisor de ellos. 
 //Por ejemplo, si los números son 9 y 12, debe imprimir 3.
 console.log('EJERCICIO 8');
+
+function resultadoMCD(x, y) {  
+    // A = B * Q + R - Algoritmo de Euclides
+    x = Math.abs(x); // 2 
+    y = Math.abs(y); // 3
+    while(y) { // y = 3 / 2 / 1
+        var t = y; // t = 3 / 2 / 1 
+        y = x % y; // y = 2 % 3 = 2 / 3 % 2 = 1 / 2 % 1 = 0
+        x = t; // x = 3 / 2 / 1
+    } 
+    return x; // 1  
+}
+
 function maximoComunDivisor(){
-    var randomNumSix = Math.floor((Math.random() * 100) + 2);
-    var randomNumSeven = Math.floor((Math.random() * 100) + 2);
-    console.log('Los numeros son: ' + randomNumSix + ', ' + randomNumSeven);   
-    function resultadoMCD(x, y) {  
-        x = Math.abs(x);  
-        y = Math.abs(y);  
-        while(y) {// y = 20,   
-            var t = y; // t = 20  
-            y = x % y; // y = 10 % 20  
-            x = t;// x = t 
-        } 
-        return x;  
-    }
+    var randomNumSix = Math.floor((Math.random() * 98) + 2);
+    var randomNumSeven = Math.floor((Math.random() * 98) + 2);
+    console.log('Los numeros son: ' + randomNumSix + ', ' + randomNumSeven);  
     console.log('El MCD es: ' + resultadoMCD(randomNumSix, randomNumSeven));
 }
 maximoComunDivisor();
@@ -123,13 +126,13 @@ maximoComunDivisor();
 //Por ejemplo, si los números son 12 y 20, debe imprimir 60.
 console.log('EJERCICIO 9');
 function minimoComunMultiplo(){
-    var randomNumSix = Math.floor((Math.random() * 100) + 2);
-    var randomNumSeven = Math.floor((Math.random() * 100) + 2);
+    var randomNumSix = Math.floor((Math.random() * 98) + 2);
+    var randomNumSeven = Math.floor((Math.random() * 98) + 2);
     console.log('Los numeros son: ' + randomNumSix + ', ' + randomNumSeven);
     function resultadoMCM(x, y) {   
-        return (!x || !y) ? 0 : Math.abs((x * y) /resultadoMCD(x, y));  
+        return (!x || !y) ? 0 : Math.abs((x * y) / resultadoMCD(x, y));  
     }    
-    function resultadoMCD(x, y) {  
+    /*function resultadoMCD(x, y) {  
         x = Math.abs(x);  
         y = Math.abs(y);  
         while(y) {  
@@ -138,7 +141,7 @@ function minimoComunMultiplo(){
             x = t;  
         } 
         return x;  
-    }
+    }*/
     console.log('El MCM es: ' + resultadoMCM(randomNumSix, randomNumSeven));
 }
 minimoComunMultiplo();
@@ -148,19 +151,20 @@ console.log('EJERCICIO 10');
 function promedioDesviacion(){
     var newArray = [];
     for(i = 0; i < 10; i++){
-        newArray.push(Math.floor((Math.random() * 100) + 0));
+        newArray.push(Math.floor((Math.random() * 100)));
     }
     console.log(newArray);
     function calcular() {
         var total = 0;
-        for(var key in newArray) 
-        total += newArray[key];
+        for(var key in newArray) {
+            total += newArray[key];                        
+        }
         var promedio = total / newArray.length;
         console.log('El promedio es: ' + promedio);
-
         var desvEstandar = 0;
-        for(var key in newArray) 
-        desvEstandar += Math.pow((parseFloat(newArray[key]) - promedio),2);
+        for(var index in newArray){
+            desvEstandar += Math.pow((parseFloat(newArray[index]) - promedio), 2);            
+        }
         var desvEstandar = Math.sqrt(desvEstandar/newArray.length);
         console.log('La desviación estándar es ' + desvEstandar);
     }

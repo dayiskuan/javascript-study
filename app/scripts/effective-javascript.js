@@ -12,20 +12,20 @@ console.log(myArray)
 //typeof = Para saber que tipo de dato es
 
 /* PREFER PRIMITIVE TO OBJECT WRAPPERS */
-var d = new String("Amo");
-var e = new String("Amo");
-var c = "cats"
+var d = new String('Amo');
+var e = new String('Amo');
+var c = 'cats'
 console.log(d + c);
 console.log(typeof d);
 console.log(typeof c)
 console.log(d === e);
 // FALSE porque son sólo iguales a sí mismos, son obj diferentes";
-console.log("cats".toUpperCase());
+console.log('cats'.toUpperCase());
 //c.nombre = "Duquesa";
 // Solo se agregan propiedades a objetos no valores primitivos
 
 /* AVOID USING == WITH MIXED TYPES */
-console.log("1.0e0" == true);
+console.log('1.0e0' == true);
 // "1.0e0" es igual 1 y true es 1 entonces la comparación de valor da 1;
 // == es para datos de diferente tipo - Abstracta
 // === elimina coerciones implicitas - Estricto, es mejor usar esta porque es más predecible

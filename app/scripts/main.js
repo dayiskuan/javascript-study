@@ -47,7 +47,7 @@ barbies.colorCabello = 'Rojo';
 barbies.colorOjos = 'Azul';
 barbies.lanzamiento = 1997;
 barbies.patinar = function() {
-	console.log("Soy " + this.nombre + " y soy patinadora");
+	console.log('Soy ' + this.nombre + ' y soy patinadora');
 };
 // verificar la existencia del objeto
 if(barbies){
@@ -69,19 +69,19 @@ soyGato('Duquesa');
 
 /* FOREACH PARA ARRAY */
 function recorrerMascotas(element, index, array){
-	console.log("Mascota: [" + index + "] " + element);
+	console.log('Mascota: [' + index + '] ' + element);
 };
 
 mascotas.forEach(recorrerMascotas);
 
-var libros = ["El principito","El psicoanalista","El ruido y la furia"];
+var libros = ['El principito','El psicoanalista','El ruido y la furia'];
 libros.forEach(function(element, index, array){
 	console.log(element);
 });
 
 var ciudades = ['San Juan', 'Cordoba', 'Buenos Aires'];
 ciudades.forEach(function(elemento, index, array){
-	console.log("[" + index + "] " + elemento);
+	console.log('[' + index + '] ' + elemento);
 });
 
 

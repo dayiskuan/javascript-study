@@ -15,6 +15,7 @@
     <!-- endbuild -->
 
     <!-- build:css styles/main.css -->
+    <link rel="stylesheet" href="styles/jquery-ui.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
     
@@ -26,60 +27,39 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-pills pull-right">
-          <li class="active">
-            <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-        <h3 class="text-muted">javascript</h3>
-      </div>
-
-      <div class="jumbotron">
-        <h1>'Allo, 'Allo!</h1>
-        <p class="lead">Always a pleasure scaffolding your apps.</p>
-        <p><a class="btn btn-lg btn-success" href="http://www.google.com" target="_blank">Splendid!</a></p>
-        <p><a class="btn btn-lg btn-default" href="http://www.facebook.com">jQuery!</a></p>
-        <p><input type="text" value="" class="form-control" /></p>
-      </div>
-
-      <div class="row marketing">
-        <div class="col-lg-6">
-          <h4>HTML5 Boilerplate</h4>
-          <p>HTML5 Boilerplate is a professional front-end template for building fast, robust, and adaptable web apps or sites.</p>
-
-          <h4>Sass</h4>
-          <p>Sass is the most mature, stable, and powerful professional grade CSS extension language in the world.</p>
-
-          <h4>Bootstrap</h4>
-          <p>Sleek, intuitive, and powerful mobile first front-end framework for faster and easier web development.</p>
-
-          <h4>Modernizr</h4>
-          <p>Modernizr is an open-source JavaScript library that helps you build the next generation of HTML5 and CSS3-powered websites.</p>
+    <div class="container">      
+      <div class="col-md-8">
+          <h3>Baggage claims</h3>
+          <table class="table table-bordered" id="myItems">
+          <tr class="help">
+            <td colspan="4" class="bg-info text-center">
+              Please, add your first claim
+            </td>
+          </tr>
+          <!-- insertar item -->
+        </table>
+        <div class="col-md-12"> 
+          <div class="row">         
+            <a class="btn btn-primary text-center" id="add"><i class="glyphicon glyphicon-plus"></i> Add a baggage claim</i></a>
+          </div>
         </div>
       </div>
-
-      <div class="footer">
-        <p>♥ from the Yeoman team</p>
+      <div class="col-md-4">
+        <h3>Unassigned gates</h3>
+          <div class="tag">
+              <span class="myTag">12</span>
+              <span class="myTag">AB2</span>
+              <span class="myTag">TR3</span>
+              <span class="myTag">45</span>
+              <div class="clearfix"></div>
+          </div>
+      </div>
+      <div class="col-md-12 botonera">
+        <a href="#" class="btn btn-success">Save</a>
+        <a href="#" class="btn btn-default">Cancel</a>
       </div>
     </div>
     
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
@@ -105,8 +85,8 @@
     
     <!-- build:js scripts/main.js -->
     <!--<script src="scripts/main.js"></script>-->
-    <script src="scripts/jquery-3.2.0.min.js"></script>
-    <script src="scripts/third-week.js"></script>
+    <script src="scripts/jquery-ui.min.js"></script>
+    <script src="scripts/my-jquery.js"></script>
     <!-- endbuild -->
   </body>
 </html>
